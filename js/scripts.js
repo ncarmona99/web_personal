@@ -49,12 +49,32 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 document.addEventListener("mousemove", parallax);
-    function parallax(event) {
-        this.querySelectorAll(".mouse").forEach((shift) => {
-            const position = shift.getAttribute("value");
-            const x = (window.innerWidth - event.pageX * position) / 90;
-            const y = (window.innerHeight - event.pageY * position) / 90;
 
-            shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
-        });
+let targetX = 0;
+let targetY = 0;
+let currentX = 0;
+let currentY = 0;
+const easingFactor = 0.05; // Ajusta este valor para cambiar la suavidad del movimiento
+
+function parallax(event) {
+    const x = (window.innerWidth - event.pageX * 5) / 90;
+    const y = (window.innerHeight - event.pageY * 5) / 90;
+    targetX = x;
+    targetY = y;
 }
+
+function update() {
+    currentX += (targetX - currentX) * easingFactor;
+    currentY += (targetY - currentY) * easingFactor;
+
+    document.querySelectorAll(".mouse").forEach((shift) => {
+        const position = shift.getAttribute("value");
+        const x = currentX * position;
+        const y = currentY * position;
+        shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+
+    requestAnimationFrame(update);
+}
+
+update();

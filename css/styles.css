@@ -10924,8 +10924,8 @@ hr.divider-light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background-color:rgb(31, 31, 31, 0.8);
   background-repeat: no-repeat;
+  background-color:rgb(31, 31, 31, 0);
   background-attachment: scroll;
   background-size: cover;
 }
@@ -11009,14 +11009,41 @@ header.masthead h1, header.masthead .h1 {
 }
 
 #img1 {
-  height: 1080px;
-  width: 1920px;
+  height: 200%;
+  width: 200%;
+  margin-bottom: 100px;
+  margin-right: 100px;
+  background-repeat: repeat-x;
 }
 
 #img2 {
-  height: 1920px;
-  width: 1080px;
+  height: 200%;
+  width: 200%;
+  margin-left: 100px;
+  margin-top: 500px;
+  background-repeat: repeat-x;
 }
 .frente{
   z-index: -1;
+}
+
+.frente2{
+  z-index: -2;
+}
+
+#container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  display: block;
+  position: absolute;
+  height: 200px !important;
+  width: 200px !important;
+  background: red;
 }
