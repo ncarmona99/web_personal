@@ -1,10 +1,4 @@
 @charset "UTF-8";
-/*!
- * Bootstrap  v5.2.3 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11007,21 +11001,28 @@ header.masthead h1, header.masthead .h1 {
 .mouse_move img {
   position: absolute;
 }
+@media screen and (min-width: 1024px) {
 
-#img1 {
-  height: 200%;
-  width: 200%;
-  margin-bottom: 100px;
-  margin-right: 100px;
-  background-repeat: repeat-x;
-}
-
-#img2 {
-  height: 200%;
-  width: 200%;
-  margin-left: 100px;
-  margin-top: 500px;
-  background-repeat: repeat-x;
+  #img1 {
+    height: 101vw;
+    width: 180vw;
+    margin-bottom: 100px;
+    margin-right: 100px;
+  }
+  
+  #img2 {
+    height: 101vw;
+    width: 180vw;
+    margin-left: 100px;
+    margin-top: 500px;
+  }
+  #img1movil{
+    display:none;
+  }
+  #img2movil{
+    display:none;
+  }
+  
 }
 .frente{
   z-index: -1;
@@ -11031,19 +11032,23 @@ header.masthead h1, header.masthead .h1 {
   z-index: -2;
 }
 
-#container {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slide {
-  display: block;
-  position: absolute;
-  height: 200px !important;
-  width: 200px !important;
-  background: red;
+@media only screen and (max-width:960px){
+  #img2movil {
+    height: 281vw;
+    width: 500vw;
+    margin-left: 100px;
+    margin-top: 500px;
+  }
+  #img1movil {
+    height: 281vw;
+    width: 500vw;
+    margin-bottom: 100px;
+    margin-right: 100px;
+  }
+  #img1{
+    display:none;
+  }
+  #img2{
+    display:none;
+  }
 }

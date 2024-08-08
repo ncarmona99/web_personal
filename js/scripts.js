@@ -54,7 +54,7 @@ let targetX = 0;
 let targetY = 0;
 let currentX = 0;
 let currentY = 0;
-const easingFactor = 0.05; // Ajusta este valor para cambiar la suavidad del movimiento
+const easingFactor = 0.02; // Ajusta este valor para cambiar la suavidad del movimiento
 
 function parallax(event) {
     const x = (window.innerWidth - event.pageX * 5) / 90;
